@@ -11,18 +11,26 @@ import Foundation
 class GetDateModel {
     
     
-    func getTodayDate() -> String {
+    func getTodayDate(slash:Bool) -> String {
         
         
         let f = DateFormatter()
         f.timeStyle = .none
         f.dateStyle = .full
-        f.locale = Locale(identifier: "ja_JP")
         
+        if slash == true {
+            
+            f.dateFormat = "yyyy/MM/dd"
+        }
+        
+        f.locale = Locale(identifier: "ja_JP")
         let now = Date()
+        
         
         return f.string(from: now)
     }
+    
+    
     
     
     

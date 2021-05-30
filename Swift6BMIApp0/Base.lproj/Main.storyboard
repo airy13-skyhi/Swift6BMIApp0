@@ -151,6 +151,9 @@
                                 <state key="normal" title="Recording">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordWeight:" destination="fSV-jo-uUV" eventType="touchUpInside" id="BS9-NA-bPw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuB-CJ-L6a">
                                 <rect key="frame" x="97" y="415" width="196" height="44"/>
@@ -167,6 +170,13 @@
                     <tabBarItem key="tabBarItem" title="" image="write" id="NDz-X9-dGL">
                         <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="aprropriateWeightLabel" destination="LuB-CJ-L6a" id="A5V-hv-X9Z"/>
+                        <outlet property="aprropriateWeightUILabel" destination="fMh-3p-Yct" id="c8W-7T-jTn"/>
+                        <outlet property="bodyWeightLabel" destination="akN-3W-PDD" id="zC6-71-enO"/>
+                        <outlet property="dateLabel" destination="36P-XG-MxP" id="PJe-ca-zmi"/>
+                        <outlet property="inputTextField" destination="QDr-i3-B87" id="Rjn-sE-KOs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1E4-dQ-shg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

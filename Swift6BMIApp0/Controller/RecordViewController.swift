@@ -11,15 +11,56 @@ import UIKit
 
 class RecordViewController: UIViewController {
     
+    var getDateModel = GetDateModel()
+    var calcWeightModel = CalcWeightModel()
+    
+    
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var bodyWeightLabel: UILabel!
+    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var aprropriateWeightUILabel: UILabel!
+    @IBOutlet weak var aprropriateWeightLabel: UILabel!
+    
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-
+        dateLabel.text = getDateModel.getTodayDate(slash: false)
+        dateLabel.layer.cornerRadius = 25.0
+        bodyWeightLabel.layer.cornerRadius = 25.0
+        aprropriateWeightUILabel.layer.cornerRadius = 25.0
+        
+        
+        aprropriateWeightLabel.text = "\(calcWeightModel.calcAprropriateWeight())kg"
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        inputTextField.resignFirstResponder()
+    }
+    
+    
+    
+    @IBAction func recordWeight(_ sender: Any) {
+        
+        
+        
+    }
+    
+    
+    
+    
     
     
     
