@@ -20,6 +20,7 @@
 		05BD61D52662595F0002495A /* GetUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61D42662595F0002495A /* GetUserDataModel.swift */; };
 		05BD61D726625AAF0002495A /* CalcWeightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61D626625AAF0002495A /* CalcWeightModel.swift */; };
 		05BD61D9266459D40002495A /* SendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61D8266459D40002495A /* SendModel.swift */; };
+		05BD61DB266499680002495A /* AlertSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61DA266499680002495A /* AlertSystem.swift */; };
 		0B94E231C1FE8ACF3E062878 /* Pods_Swift6BMIApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DCA64C095E0A8E82739787 /* Pods_Swift6BMIApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		05BD61D42662595F0002495A /* GetUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDataModel.swift; sourceTree = "<group>"; };
 		05BD61D626625AAF0002495A /* CalcWeightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcWeightModel.swift; sourceTree = "<group>"; };
 		05BD61D8266459D40002495A /* SendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendModel.swift; sourceTree = "<group>"; };
+		05BD61DA266499680002495A /* AlertSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSystem.swift; sourceTree = "<group>"; };
 		2A6CCA9B25921FA3E826E22F /* Pods-Swift6BMIApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift6BMIApp0.release.xcconfig"; path = "Target Support Files/Pods-Swift6BMIApp0/Pods-Swift6BMIApp0.release.xcconfig"; sourceTree = "<group>"; };
 		39D855B2FFA7C88761BC42AA /* Pods-Swift6BMIApp0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift6BMIApp0.debug.xcconfig"; path = "Target Support Files/Pods-Swift6BMIApp0/Pods-Swift6BMIApp0.debug.xcconfig"; sourceTree = "<group>"; };
 		92DCA64C095E0A8E82739787 /* Pods_Swift6BMIApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift6BMIApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				05BD61D42662595F0002495A /* GetUserDataModel.swift */,
 				05BD61D626625AAF0002495A /* CalcWeightModel.swift */,
 				05BD61D8266459D40002495A /* SendModel.swift */,
+				05BD61DA266499680002495A /* AlertSystem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BD61BB2661F7920002495A /* ViewController.swift in Sources */,
+				05BD61DB266499680002495A /* AlertSystem.swift in Sources */,
 				05BD61D9266459D40002495A /* SendModel.swift in Sources */,
 				05BD61B72661F7920002495A /* AppDelegate.swift in Sources */,
 				05BD61B92661F7920002495A /* SceneDelegate.swift in Sources */,

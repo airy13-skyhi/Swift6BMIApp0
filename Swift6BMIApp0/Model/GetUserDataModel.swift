@@ -10,10 +10,11 @@ import Foundation
 
 class GetUserDataModel {
     
-    var result = String()
     
     
-    func getUserData(key:String) -> String {
+    static func getUserData(key:String) -> String {
+        
+        var result = String()
         
         if UserDefaults.standard.object(forKey: key) != nil {
             

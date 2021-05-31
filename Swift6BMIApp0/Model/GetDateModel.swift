@@ -11,7 +11,7 @@ import Foundation
 class GetDateModel {
     
     
-    func getTodayDate(slash:Bool) -> String {
+    static func getTodayDate(slash:Bool) -> String {
         
         
         let f = DateFormatter()

@@ -11,8 +11,9 @@ import UIKit
 
 class RecordViewController: UIViewController {
     
-    var getDateModel = GetDateModel()
     var calcWeightModel = CalcWeightModel()
+    var sendModel = SendModel()
+    var alertSystem = AlertSystem()
     
     
     
@@ -29,7 +30,7 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
         
         
-        dateLabel.text = getDateModel.getTodayDate(slash: false)
+        dateLabel.text = GetDateModel.getTodayDate(slash: false)
         dateLabel.layer.cornerRadius = 25.0
         bodyWeightLabel.layer.cornerRadius = 25.0
         aprropriateWeightUILabel.layer.cornerRadius = 25.0
@@ -54,7 +55,9 @@ class RecordViewController: UIViewController {
     
     @IBAction func recordWeight(_ sender: Any) {
         
+        sendModel.sendTodayWeightToDB(userName: GetUserDataModel.getUserData(key: "userName"), weight: inputTextField.text!)
         
+        alertSystem.showAlert(title: "保存されました！", message: "", buttonTitle: "OK", viewController: self)
         
     }
     

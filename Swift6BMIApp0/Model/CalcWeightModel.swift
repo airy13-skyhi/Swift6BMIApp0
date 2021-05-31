@@ -13,13 +13,13 @@ import Foundation
 class CalcWeightModel {
     
     
-    var getUserDataModel = GetUserDataModel()
+    //var getUserDataModel = GetUserDataModel()
     
     
     
     func calcAprropriateWeight() -> String {
         
-        var aprropriateWeight = pow(Double(getUserDataModel.getUserData(key: "height"))!/100.00,2) * 22
+        var aprropriateWeight = pow(Double(GetUserDataModel.getUserData(key: "height"))!/100.00,2) * 22
         
         aprropriateWeight = round(aprropriateWeight*10)/10
         
