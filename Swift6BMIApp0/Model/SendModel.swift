@@ -17,7 +17,7 @@ class SendModel {
     var fbAuth = Auth.auth()
     
     
-    func sendTodayWeightToDB(userName:String, weight:String) {
+    func sendResultWeightToDB(userName:String, weight:String) {
         
         var date = GetDateModel.getTodayDate(slash: true)
         
@@ -35,36 +35,43 @@ class SendModel {
         
         
         
-        if UserDefaults.standard.object(forKey: "today") != nil {
-            
+        if UserDefaults.standard.object(forKey: "today2") != nil {
             
             
         }else {
             
-            
-            UserDefaults.standard.setValue(date, forKey: "today")
-            UserDefaults.standard.setValue(1, forKey: "done")
+            UserDefaults.standard.setValue(date, forKey: "today2")
+            UserDefaults.standard.setValue(1, forKey: "done2")
         }
         
         
-        if UserDefaults.standard.object(forKey: "today") as! String != date {
+        
+        
+        
+        
+        if UserDefaults.standard.object(forKey: "today2") as! String != date {
             
-            db.collection("Users").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "weight":weight, "date":Date().timeIntervalSince1970])
+            db.collection("RankingData").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
+            
+            UserDefaults.standard.setValue(date, forKey: "today2")
+            UserDefaults.standard.setValue(0, forKey: "done2")
             
             
-            UserDefaults.standard.setValue(date, forKey: "today")
-            UserDefaults.standard.setValue(0, forKey: "done")
-            
-        }else if UserDefaults.standard.object(forKey: "today") as! String == date && UserDefaults.standard.object(forKey: "done") as! Int == 0 {
+        }else if UserDefaults.standard.object(forKey: "today2") as! String == date && UserDefaults.standard.object(forKey: "done2") as! Int == 0 {
             
             
-            db.collection("Users").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).updateData(["weight":weight])
+            db.collection("RankingData").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).updateData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
             
-            UserDefaults.standard.setValue(date, forKey: "today")
+            UserDefaults.standard.setValue(date, forKey: "today2")
+            
+            
+        }else {
+            
+            db.collection("RankingData").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
             
         }
-        
-        
+        UserDefaults.standard.setValue(date, forKey: "today2")
+        UserDefaults.standard.setValue(0, forKey: "done2")
         
     }
     

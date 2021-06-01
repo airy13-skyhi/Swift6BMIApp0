@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 protocol GetDataProtocol {
     
-    func getData(dateArray:[PersonalData])
+    func getData(dataArray:[PersonalData])
     
 }
 
@@ -50,11 +50,11 @@ class LoadModel {
                         
                     }
                     
-                    
                 }
                 
             }
             
+            self.getDataProtocol?.getData(dataArray: self.personalDataArray)
             
         }
         
