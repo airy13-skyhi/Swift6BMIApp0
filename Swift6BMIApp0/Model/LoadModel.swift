@@ -7,19 +7,28 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 
 protocol GetDataProtocol {
     
     func getData(dataArray:[PersonalData])
-    
 }
+
+
+protocol GetRankProtocol {
+    
+    func getRankData(dataArray:[RankData])
+}
+
 
 class LoadModel {
     
     let db = Firestore.firestore()
     var personalDataArray = [PersonalData]()
+    var rankDataArray = [RankData]()
     var getDataProtocol:GetDataProtocol?
+    var getRankProtocol:GetRankProtocol?
     
     
     
@@ -59,6 +68,52 @@ class LoadModel {
         }
         
     }
+    
+    
+    
+    
+    func loadRankingData(userID:String) {
+        
+        var rankNumber = 0
+        var doneNumber = Int()
+        
+        db.collection("RankingData").order(by: "resultWeight").addSnapshotListener { snapShot, error in
+            
+            if error != nil {
+                return
+            }
+            
+            if let snapShotDoc = snapShot?.documents {
+                
+                for doc in snapShotDoc {
+                    
+                    let data = doc.data()
+                    
+                    
+                    if let userID = data["userID"] as? String, let userName = data["userName"] as? String, let resultWeight = data["resultWeight"] as? String {
+                        
+                        
+                        let newRankData = RankData(userName: userName, resultWeight: resultWeight, userID: userID)
+                        
+                        self.rankDataArray.append(newRankData)
+                        rankNumber += 1
+                        
+                        if newRankData.userID == Auth.auth().currentUser?.uid {
+                            
+                            doneNumber = rankNumber
+                        }
+                    }
+                    
+                }
+                
+            }
+            self.getRankProtocol?.getRankData(dataArray: self.rankDataArray)
+            
+        }
+        
+    }
+    
+    
     
     
 }

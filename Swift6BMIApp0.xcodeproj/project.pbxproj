@@ -25,6 +25,7 @@
 		05BD61E12664ED000002495A /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61E02664ED000002495A /* PersonalData.swift */; };
 		05BD61E32664EEAA0002495A /* LoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61E22664EEAA0002495A /* LoadModel.swift */; };
 		05BD61E52666547C0002495A /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61E42666547C0002495A /* RankingViewController.swift */; };
+		05BD61E72666570A0002495A /* RankData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61E62666570A0002495A /* RankData.swift */; };
 		0B94E231C1FE8ACF3E062878 /* Pods_Swift6BMIApp0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DCA64C095E0A8E82739787 /* Pods_Swift6BMIApp0.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		05BD61E02664ED000002495A /* PersonalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalData.swift; sourceTree = "<group>"; };
 		05BD61E22664EEAA0002495A /* LoadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadModel.swift; sourceTree = "<group>"; };
 		05BD61E42666547C0002495A /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		05BD61E62666570A0002495A /* RankData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankData.swift; sourceTree = "<group>"; };
 		2A6CCA9B25921FA3E826E22F /* Pods-Swift6BMIApp0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift6BMIApp0.release.xcconfig"; path = "Target Support Files/Pods-Swift6BMIApp0/Pods-Swift6BMIApp0.release.xcconfig"; sourceTree = "<group>"; };
 		39D855B2FFA7C88761BC42AA /* Pods-Swift6BMIApp0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift6BMIApp0.debug.xcconfig"; path = "Target Support Files/Pods-Swift6BMIApp0/Pods-Swift6BMIApp0.debug.xcconfig"; sourceTree = "<group>"; };
 		92DCA64C095E0A8E82739787 /* Pods_Swift6BMIApp0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift6BMIApp0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				05BD61DA266499680002495A /* AlertSystem.swift */,
 				05BD61E02664ED000002495A /* PersonalData.swift */,
 				05BD61E22664EEAA0002495A /* LoadModel.swift */,
+				05BD61E62666570A0002495A /* RankData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				05BD61CE2662455D0002495A /* RecordViewController.swift in Sources */,
 				05BD61D52662595F0002495A /* GetUserDataModel.swift in Sources */,
 				05BD61E32664EEAA0002495A /* LoadModel.swift in Sources */,
+				05BD61E72666570A0002495A /* RankData.swift in Sources */,
 				05BD61DF2664E8760002495A /* ChartViewController.swift in Sources */,
 				05BD61E12664ED000002495A /* PersonalData.swift in Sources */,
 			);
