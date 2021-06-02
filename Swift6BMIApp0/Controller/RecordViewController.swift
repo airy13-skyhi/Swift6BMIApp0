@@ -57,7 +57,7 @@ class RecordViewController: UIViewController {
         
         sendModel.sendResultWeightToDB(userName: GetUserDataModel.getUserData(key: "userName"), weight: inputTextField.text!)
         
-        alertSystem.showAlert(title: "保存されました！", message: "", buttonTitle: "OK", viewController: self)
+        AlertSystem.showAlert(title: "保存されました！", message: "", buttonTitle: "OK", viewController: self)
         
     }
     

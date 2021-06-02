@@ -85,7 +85,7 @@ class ChartViewController: UIViewController, ChartViewDelegate, UIPickerViewDele
             
         }else if component == 1 {
             
-            return "\(months[row])年"
+            return "\(months[row])月"
             
         }else {
             
@@ -140,12 +140,23 @@ class ChartViewController: UIViewController, ChartViewDelegate, UIPickerViewDele
     func setUpChart(values:[PersonalData]) {
         
         
+        let formatter:DateFormatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateStyle = .short
+        
+        
         var entry = [ChartDataEntry]()
         
         for i in 0 ..< values.count {
             
+            let date = Date(timeIntervalSince1970: values[i].date)
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "ja_JP")
+            dateFormatter.dateFormat = "dd"
             
-            entry.append(ChartDataEntry(x: Double(i), y: Double(values[i].weight)!))
+            let dateString = dateFormatter.string(from: date)
+            
+            entry.append(ChartDataEntry(x: Double(dateString)!, y: Double(values[i].weight)!))
             
         }
         
@@ -176,6 +187,25 @@ class ChartViewController: UIViewController, ChartViewDelegate, UIPickerViewDele
         chart.data = data
         chart.animate(xAxisDuration: 2)
         
+    }
+    
+    
+    
+    @IBAction func toRankVC(_ sender: Any) {
+        
+        
+        let rankVC = self.storyboard?.instantiateViewController(identifier: "rankVC") as! RankingViewController
+        self.navigationController?.pushViewController(rankVC, animated: true)
+        
+        
+    }
+    
+    
+    
+    @IBAction func tap(_ sender: Any) {
+        
+        
+        pickerView.isHidden = false
     }
     
     

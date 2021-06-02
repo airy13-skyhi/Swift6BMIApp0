@@ -11,7 +11,7 @@ import EMAlertController
 
 class AlertSystem {
     
-    func showAlert(title:String, message:String, buttonTitle:String, viewController:UIViewController) {
+    static func showAlert(title:String, message:String, buttonTitle:String, viewController:UIViewController) {
         
         let alert = EMAlertController(title: title, message: message)
         let close = EMAlertAction(title: title, style: .cancel)
