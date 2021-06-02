@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         
+        let fbAuth = Auth.auth()
+        do {
+            try fbAuth.signOut()
+        }catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+        
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }

@@ -51,7 +51,7 @@ class SendModel {
         
         if UserDefaults.standard.object(forKey: "today2") as! String != date {
             
-            db.collection("RankingData").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
+            db.collection("RankingData").document(fbAuth.currentUser!.uid).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
             
             UserDefaults.standard.setValue(date, forKey: "today2")
             UserDefaults.standard.setValue(0, forKey: "done2")
@@ -60,14 +60,14 @@ class SendModel {
         }else if UserDefaults.standard.object(forKey: "today2") as! String == date && UserDefaults.standard.object(forKey: "done2") as! Int == 0 {
             
             
-            db.collection("RankingData").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).updateData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
+            db.collection("RankingData").document(fbAuth.currentUser!.uid).updateData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
             
             UserDefaults.standard.setValue(date, forKey: "today2")
             
             
         }else {
             
-            db.collection("RankingData").document(fbAuth.currentUser!.uid).collection(String(collectionID)).document(String(documentID)).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
+            db.collection("RankingData").document(fbAuth.currentUser!.uid).setData(["userName":userName, "userID":fbAuth.currentUser!.uid, "resultWeight":weight])
             
         }
         UserDefaults.standard.setValue(date, forKey: "today2")

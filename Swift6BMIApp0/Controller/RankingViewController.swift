@@ -50,6 +50,8 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.contentView.backgroundColor = .clear
+        
         let rankLabel = cell.contentView.viewWithTag(1) as! UILabel
         rankLabel.text = String(indexPath.row + 1)
         

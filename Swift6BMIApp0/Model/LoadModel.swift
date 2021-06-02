@@ -79,6 +79,8 @@ class LoadModel {
         
         db.collection("RankingData").order(by: "resultWeight").addSnapshotListener { snapShot, error in
             
+            self.rankDataArray = []
+            
             if error != nil {
                 return
             }

@@ -48,6 +48,8 @@ class ChartViewController: UIViewController, ChartViewDelegate, UIPickerViewDele
         let date = GetDateModel.getTodayDate(slash: true)
         let dateArray = date.components(separatedBy: "/")
         
+        pickerView.isHidden = true
+        
         loadModel.loadMyRecordData(userID: fbAuth.currentUser!.uid, yearMonth: dateArray[0] + dateArray[1], day: dateArray[2])
         
     }
@@ -101,16 +103,24 @@ class ChartViewController: UIViewController, ChartViewDelegate, UIPickerViewDele
         let year = years[pickerView.selectedRow(inComponent: 0)]
         let month = months[pickerView.selectedRow(inComponent: 1)]
         
-        var month2nd = String()
+        var month2 = String()
         
         if month < 10 {
             
-            month2nd = "0" + String(month)
-            dateLabel.text = "\(years)年\(month2nd)月"
+            month2 = "0" + String(month)
+            dateLabel.text = "\(year)年\(month2)月"
+            
+            loadModel.loadMyRecordData(userID: fbAuth.currentUser!.uid, yearMonth: String(year) + String(month2), day: "")
+            
+        }else {
+            
+            dateLabel.text = "\(year)年\(month)月"
             
             loadModel.loadMyRecordData(userID: fbAuth.currentUser!.uid, yearMonth: String(year) + String(month), day: "")
             
+            
         }
+        
         pickerView.isHidden = true
         
     }
@@ -128,11 +138,11 @@ class ChartViewController: UIViewController, ChartViewDelegate, UIPickerViewDele
             
             resultLabel.text = String(Double(chartArray.last!.weight)! - Double(chartArray.first!.weight)!)
             
+            chartView.xAxis.labelPosition = .bottom
+            chartView.xAxis.labelCount = chartArray.count
             
             sendModel.sendResultWeightToDB(userName: GetUserDataModel.getUserData(key: "userName"), weight: resultLabel.text!)
         }
-        
-        
     }
     
     
